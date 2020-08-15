@@ -47,7 +47,18 @@ class LinkedList(object):
         Assume the first position is "1".
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
-        pass
+        counter = 1 # assume the first position is 1
+        current = self.head # top node is the current element
+        if position > 1: # if the position is greater than 1
+            while current and counter < position: # keep going until the position
+                if counter == position -1: # if we found the element before the insert position
+                    new_element.next = current.next # store the pointer/reference to the next element
+                    current.next = new_element # store the next reference of the previous element to the current element
+                current = current.next # new element is now top node
+                counter += 1 # continue iterating the counter
+        elif position == 1: # if we want to insert an element at the first position
+            new_element.next = self.head # reference the top node as the next element of the new element
+            self.head = new_element # the new element is now the top node
     
     
     def delete(self, value):

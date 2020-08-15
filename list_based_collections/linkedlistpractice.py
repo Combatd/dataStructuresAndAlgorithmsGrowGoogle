@@ -63,7 +63,17 @@ class LinkedList(object):
     
     def delete(self, value):
         """Delete the first node with a given value."""
-        pass
+        current = self.head # top node is the current position at the start
+        previous = None # the first posiiton element does not have a previous
+        while current.value != value and current.next: # keep going when the value is not matched to current element and there is a next element referenced
+            previous = current # the previous element is referenced to the current element
+            current = current.next # the current element is referenced to the next element
+        if current.value == value: # if the value is found in the current element's value
+            if previous: # if the previous value exists
+                previous.next = current.next # the element after the previous element's next value gets reassigned as the current element's next value
+            else: # else
+                self.head = current.next # the top node is now the next current element (last position element removed)
+
 
 # Test cases
 # Set up some Elements

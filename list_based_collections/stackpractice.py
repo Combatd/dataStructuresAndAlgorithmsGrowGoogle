@@ -47,6 +47,7 @@ class Stack(object):
 
     def pop(self):
         "Pop (remove) the first element off the top of the stack and return it"
+        return self.ll.delete_first() # uses class method delete_first to delete the last element
         pass
     
 # Test cases

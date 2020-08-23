@@ -13,7 +13,7 @@ class Queue:
         self.storage.append(new_element) 
 
     def peek(self):
-        pass 
+        return self.storage[0] # look at the only element in the collection 
 
     def dequeue(self):
         pass

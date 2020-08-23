@@ -16,7 +16,7 @@ class Queue:
         return self.storage[0] # look at the only element in the collection 
 
     def dequeue(self):
-        pass
+        return self.storage.pop(0) # return the one element in the queue after removing it
     
 # Setup
 q = Queue(1)

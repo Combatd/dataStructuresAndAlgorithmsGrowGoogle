@@ -12,7 +12,7 @@ doesn't exist in the list."""
 
 def binary_search(input_array, value):
     """Your code goes here."""
-    return -1
+    midpoint = int(len(input_array) / 2) # midpoint will be lower number if len(input_array) is even
 
 test_list = [1,3,9,11,15,19,29]
 test_val1 = 25

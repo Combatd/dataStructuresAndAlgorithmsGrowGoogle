@@ -13,6 +13,15 @@ doesn't exist in the list."""
 def binary_search(input_array, value):
     """Your code goes here."""
     midpoint = int(len(input_array) / 2) # midpoint will be lower number if len(input_array) is even
+    savedLocation = 0 # the index will start at 0
+    for index, number in enumerate(input_array, start=midpoint): # enumerate through the array starting at the midpoint
+        if number == value:
+            return savedLocation
+            break
+        
+        savedLocation += 1 # iterate this before moving to next iteration
+
+    return -1
 
 test_list = [1,3,9,11,15,19,29]
 test_val1 = 25

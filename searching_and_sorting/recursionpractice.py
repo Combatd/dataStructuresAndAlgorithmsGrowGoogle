@@ -6,15 +6,16 @@ iterative code in the instructions."""
 def get_fib(position):
     # base cases based on value of position
     # if position is equal to 1
-        
-        # return [0] which is a one element array
-    # else if position is equal to 2
-        
-        # return [0, 1] which is a two element array
+    if position == 0:
+        return [0]  # return 0
+    elif position == 1: # else if position is equal to 1
+        return [1]
 
     # make recursive call here 
+    fib_list = get_fib(position - 1)
+    fib_list.append(fib_list[len(fib_list) - 1] + fib_list[len(fib_list) - 2])
     
-    return -1
+    return fib_list
 
 # Test cases
 print(get_fib(9))

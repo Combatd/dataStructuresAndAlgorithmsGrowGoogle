@@ -19,7 +19,9 @@ def quicksort(array):
         first_num = array.pop(left_index)
         array.append(first_num)  # moves first number to the end
         before_last_num = array.pop(right_index - 2) 
-        array.insert(before_last_num) # moves second to last number to the front
+        array.insert(0, before_last_num) # moves second to last number to the front
+
+    return array
 
 # helper method
 def pivot_lower_than_compared_number(pivot, compared_number):

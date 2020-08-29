@@ -16,8 +16,10 @@ def quicksort(array):
 
     print(midpoint, ' <- midpoint ', pivot, ' <- pivot', before_pivot, '<- before_pivot',  compared_number, ' <- compared_number')
     if pivot_lower_than_compared_number(pivot, compared_number):
-        array.pop(left_index).append() # moves first number to the end
-        array.pop(right_index - 2).insert(0) # moves second to last number to the front
+        first_num = array.pop(left_index)
+        array.append(first_num)  # moves first number to the end
+        before_last_num = array.pop(right_index - 2) 
+        array.insert(before_last_num) # moves second to last number to the front
 
 # helper method
 def pivot_lower_than_compared_number(pivot, compared_number):

@@ -21,7 +21,6 @@ locations['Africa'] = {'Egypt': 'Cairo'}
 locations['North America']['USA'].append('Atlanta')
 
 
-print(locations, ' || All Locations')
 """Print the following (using "print").
 1. A list of all cities in the USA in
 alphabetic order.
@@ -35,3 +34,14 @@ American City
 2
 Asian City - Country
 Asian City - Country"""
+
+print(1)
+print(sorted(locations['North America']['USA']))
+print(2)
+asia_cities = []
+for countries, cities in locations['Asia'].items():
+    city_country = cities + " - " + countries
+    asia_cities.append(city_country)
+asia_sorted = sorted(asia_cities)
+for city in asia_sorted:
+    print(city)

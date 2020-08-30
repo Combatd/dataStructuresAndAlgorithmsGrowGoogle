@@ -16,7 +16,12 @@ Cairo (Egypt, Africa)
 Shanghai (China, Asia)"""
 
 locations = {'North America': {'USA': ['Mountain View']}}
+locations['Asia'] = {'India': 'Bangalore', 'China': 'Shanghai'}
+locations['Africa'] = {'Egypt': 'Cairo'}
+locations['North America']['USA'].append('Atlanta')
 
+
+print(locations, ' || All Locations')
 """Print the following (using "print").
 1. A list of all cities in the USA in
 alphabetic order.

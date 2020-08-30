@@ -36,7 +36,10 @@ Asian City - Country
 Asian City - Country"""
 
 print(1)
-print(sorted(locations['North America']['USA']))
+# print(sorted(locations['North America']['USA']))
+for city in sorted(locations['North America']['USA']):
+    print(city)
+
 print(2)
 asia_cities = []
 for countries, cities in locations['Asia'].items():

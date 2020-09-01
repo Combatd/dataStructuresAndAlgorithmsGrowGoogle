@@ -14,8 +14,8 @@ class HashTable(object):
         if hash_value != -1: # if the hash_value is valid input
             if self.table[hash_value] != None: # if the hash value actually exists
                 self.table[hash_value].append(string) # add it to the end of the found array
-        else: # otherwise if it doesn't exist
-            self.table[hash_value] = [string] # add it in as the first element of a new array in the hash table
+            else: # otherwise if it doesn't exist
+                self.table[hash_value] = [string] # add it in as the first element of a new array in the hash table
 
     def lookup(self, string):
         """Return the hash value if the

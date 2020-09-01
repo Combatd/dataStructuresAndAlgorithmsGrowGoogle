@@ -10,7 +10,12 @@ class HashTable(object):
     def store(self, string):
         """Input a string that's stored in 
         the table."""
-        pass
+        hash_value = self.calculate_hash_value(string) # run the ASCII calculation on the string and prepare to store it in the hash table
+        if hash_value != -1: # if the hash_value is valid input
+            if self.table[hash_value] != None: # if the hash value actually exists
+                self.table[hash_value].append(string) # add it to the end of the found array
+        else: # otherwise if it doesn't exist
+            self.table[hash_value] = [string] # add it in as the first element of a new array in the hash table
 
     def lookup(self, string):
         """Return the hash value if the

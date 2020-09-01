@@ -21,6 +21,12 @@ class HashTable(object):
         """Return the hash value if the
         string is already in the table.
         Return -1 otherwise."""
+        hash_value = self.calculate_hash_value(string) # run ASCII calculation on string and prepare to lookup in hash table
+        if hash_value != -1: # if the hash_value is valid input
+            if self.table[hash_value] != None: # if the hash value exists in an array in the hash table
+                if string in self.table[hash_value]: # if the string matches a value in the hash table
+                    return hash_value # return the found value
+
         return -1
 
     def calculate_hash_value(self, string):

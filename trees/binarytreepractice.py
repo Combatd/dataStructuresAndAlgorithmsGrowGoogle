@@ -24,7 +24,8 @@ class BinaryTree(object):
         """Print out all tree nodes
         as they are visited in
         a pre-order traversal."""
-        return ""
+        # [:-1] allows to omit the last element because we start at it before searching
+        return self.preorder_print(tree.root, "")[:-1]
 
     def preorder_search(self, start, find_val):
         """Helper method - use this to create a 

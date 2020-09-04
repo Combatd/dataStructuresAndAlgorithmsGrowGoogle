@@ -13,7 +13,12 @@ class BinaryTree(object):
         """Return True if the value
         is in the tree, return
         False otherwise."""
-        return False
+        # This is too much code for something that can be a one line return
+        # if self.preorder_search(tree.root, find_val) != None:
+        #     return True
+        # else:
+        #     return False
+        return self.preorder_search(tree.root, find_val)
 
     def print_tree(self):
         """Print out all tree nodes

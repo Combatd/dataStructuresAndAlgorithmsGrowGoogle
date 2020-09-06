@@ -41,6 +41,10 @@ class BinaryTree(object):
     def preorder_print(self, start, traversal):
         """Helper method - use this to create a 
         recursive print solution."""
+        if start:
+            traversal += (str(start.value) + '-') # Append the starting value to the traversal variable
+            traversal = self.preorder_print(start.left, traversal) # print the value of nodes on the left side of the bfs queue
+            traversal = self.preorder_print(start.right, traversal) # print the value of nodes at right side of bfs queue
         return traversal
 
 

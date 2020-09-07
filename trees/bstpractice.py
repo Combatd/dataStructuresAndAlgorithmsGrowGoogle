@@ -11,6 +11,20 @@ class BST(object):
 
     def insert(self, new_val):
         pass
+    
+    # helper will check for conditions such as being less than new_val
+    # and looking to the current node's left and right of the tree
+    def insert_helper(self, current_node, new_val):
+        if current_node.value < new_val: # if the current node's value is less then the new value
+            if current_node.right: # if there are children on the right branch of the node
+                self.insert_helper(current_node.right, new_val) # insert a new node child on current_node
+            else:
+                current_node.right = Node(new_val) # initalize a new Node to populate
+        else:
+            if current_node.left:
+                self.insert_helper(current_node.left, new_val) # insert the node if it is a new value
+            else:
+                current_node.left = Node(new_val) # initalize a new Node object that has a larger value
 
     def search(self, find_val):
         return False

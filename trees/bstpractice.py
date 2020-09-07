@@ -10,7 +10,7 @@ class BST(object):
         self.root = Node(root)
 
     def insert(self, new_val):
-        pass
+        self.insert_helper(self.root, new_val)
     
     # helper will check for conditions such as being less than new_val
     # and looking to the current node's left and right of the tree

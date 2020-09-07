@@ -15,6 +15,10 @@ class BST(object):
     def search(self, find_val):
         return False
 
+    def print_tree(self):
+        # [:-1] allows to omit the last element because we start at it before searching
+        return self.preorder_print(tree.root, "")[:-1]
+
 
 # Set up tree
 tree = BST(4)

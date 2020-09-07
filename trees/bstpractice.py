@@ -19,6 +19,17 @@ class BST(object):
         # [:-1] allows to omit the last element because we start at it before searching
         return self.preorder_print(tree.root, "")[:-1]
 
+    def preorder_print(self, start, traversal):
+        if start:
+            # Append the starting value to the traversal variable
+            traversal += (str(start.value) + '-')
+            # print the value of nodes on the left side of the bfs queue
+            traversal = self.preorder_print(start.left, traversal)
+            # print the value of nodes at right side of bfs queue
+            traversal = self.preorder_print(start.right, traversal)
+        
+        return traversal
+
 
 # Set up tree
 tree = BST(4)

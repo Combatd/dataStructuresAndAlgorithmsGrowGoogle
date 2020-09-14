@@ -29,6 +29,17 @@ class BST(object):
     def search(self, find_val):
         return self.search_helper(self.root, find_val)
 
+    def search_helper(self, current_node, find_val)
+        if current_node:
+            if current_node.value == find_val:
+                return True
+            elif current_node.value < find_val:
+                return self.search_helper(current_node.right, find_val)
+            else
+                return self.search_helper(current_node.left, find_val)
+        
+        return False
+
     def print_tree(self):
         # [:-1] allows to omit the last element because we start at it before searching
         return self.preorder_print(tree.root, "")[:-1]

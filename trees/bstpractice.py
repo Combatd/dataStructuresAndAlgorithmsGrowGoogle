@@ -29,7 +29,7 @@ class BST(object):
     def search(self, find_val):
         return self.search_helper(self.root, find_val)
 
-    def search_helper(self, current_node, find_val)
+    def search_helper(self, current_node, find_val):
         if current_node:
             if current_node.value == find_val:
                 return True

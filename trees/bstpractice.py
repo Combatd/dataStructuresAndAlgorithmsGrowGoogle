@@ -35,7 +35,7 @@ class BST(object):
                 return True
             elif current_node.value < find_val:
                 return self.search_helper(current_node.right, find_val)
-            else
+            else:
                 return self.search_helper(current_node.left, find_val)
         
         return False

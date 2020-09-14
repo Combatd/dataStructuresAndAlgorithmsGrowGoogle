@@ -27,7 +27,7 @@ class BST(object):
                 current_node.left = Node(new_val) # initalize a new Node object that has a larger value
 
     def search(self, find_val):
-        return False
+        return self.search_helper(self.root, find_val)
 
     def print_tree(self):
         # [:-1] allows to omit the last element because we start at it before searching

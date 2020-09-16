@@ -63,7 +63,16 @@ class Graph(object):
         for edge_object in self.edges:
             adjacency_matrix[edge_object.node_from.value][edge_object.node_to.value] = edge_object.value # sets values of nested array vertices
 
-        return adjacency_matrix    
+        return adjacency_matrix
+
+    def find_max_index(self):
+        # The adjacency matrix of a signed graph has −1 or +1 for adjacent vertices, depending on the sign of the edges.
+        max_index = -1
+        if len(self.nodes):
+            for node in self.nodes:
+                if node.value > max_index:
+                    max_index = node.value
+        return max_index
 
     def get_adjacency_matrix(self):
         """Return a matrix, or 2D list.

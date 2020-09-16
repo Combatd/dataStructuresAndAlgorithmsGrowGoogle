@@ -149,6 +149,13 @@ class Graph(object):
         """
         ret_list = [start_node.value]
         # Your code here
+        start_node.visited = True # The root is always visited upon calling
+        # get nodes below the root node
+        edges_out = [e for e in start_node.edges
+                     if e.node_to.value != start_node.value]
+        for edge in edges_out: # iterate through entire edges_out
+            if not edge.node_to.visited: # if the edge is not not visited
+                ret_list.extend(self.dfs_helper(edge.node_to)) # recursively call the next node         
         return ret_list
 
     def dfs(self, start_node_num):

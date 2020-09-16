@@ -53,12 +53,17 @@ class Graph(object):
     def get_adjacency_list(self):
         """Don't return any Node or Edge objects!
         You'll return a list of lists.
-        The indecies of the outer list represent
+        The indices of the outer list represent
         "from" nodes.
         Each section in the list will store a list
         of tuples that looks like this:
         (To Node, Edge Value)"""
-        return []
+        max_index = self.find_max_index() # invokes helper method
+        adjacency_matrix = [[0 for i in range(max_index + 1)] for j in range(max_index + 1)] # creates a matrix of vertices and edges
+        for edge_object in self.edges:
+            adjacency_matrix[edge_object.node_from.value][edge_object.node_to.value] = edge_object.value # sets values of nested array vertices
+
+        return adjacency_matrix    
 
     def get_adjacency_matrix(self):
         """Return a matrix, or 2D list.
